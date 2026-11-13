@@ -1,0 +1,27 @@
+:root{--bg:#0b1020;--panel:#121a30;--line:#24304f;--text:#eef1f7;--muted:#9aa6c2;--gold:#d8b25a;--gold2:#f3d98b}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:18px/1.7 Georgia,"Times New Roman",serif}
+a{color:var(--gold2)}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px 60px}
+header.top{text-align:center;padding:26px 18px 10px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#121a30,#0b1020)}
+.emblem{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font:700 30px/1 Georgia,serif;box-shadow:0 0 0 4px #0b1020,0 0 0 5px #3a3220}
+.brand{font:700 26px/1.2 Georgia,serif;letter-spacing:.06em;margin:10px 0 2px;color:var(--gold2);text-transform:uppercase}
+.tag{color:var(--muted);font:italic 15px/1.5 Georgia,serif;margin:0 0 12px}
+h1{font-size:30px;line-height:1.25;margin:26px 0 8px}
+h2{font-size:22px;margin:28px 0 8px;color:var(--gold2)}
+.meta{color:var(--muted);font:14px/1.5 -apple-system,system-ui,sans-serif}
+.card{display:block;text-decoration:none;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
+.card h3{margin:0 0 6px;font-size:21px;color:var(--gold2)}
+.card p{margin:0;color:var(--muted);font-size:16px;line-height:1.55}
+.card .go{display:inline-block;margin-top:10px;font:600 14px -apple-system,system-ui,sans-serif;color:var(--gold)}
+.story p{margin:0 0 1.1em}
+.story p.lead::first-letter{float:left;font-size:3.1em;line-height:.9;padding:6px 8px 0 0;color:var(--gold)}
+.break{text-align:center;color:var(--gold);letter-spacing:.6em;margin:22px 0}
+.ad{margin:24px 0;min-height:0;text-align:center;overflow:hidden}
+.ad:not(:empty)::before{content:"Advertisement";display:block;font:11px -apple-system,system-ui,sans-serif;color:#6c7895;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.btn{display:inline-block;background:var(--gold);color:#1a1405;text-decoration:none;font:700 16px -apple-system,system-ui,sans-serif;padding:13px 20px;border-radius:12px}
+.btn.ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+.follow{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin:30px 0}
+.follow p{margin:0 0 12px;font-size:17px}
+.next{margin-top:30px}
+footer{text-align:center;color:#6c7895;font:13px/1.6 -apple-system,system-ui,sans-serif;padding:24px 18px;border-top:1px solid var(--line)}

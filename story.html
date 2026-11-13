@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secret Honor USA</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a href="./" style="text-decoration:none"><div class="emblem">H</div><div class="brand">Secret Honor USA</div></a>
+</header>
+<main class="wrap">
+  <article id="story" class="story"></article>
+  <div class="follow">
+    <p>If this story touched you, follow for more.</p>
+    <a class="btn" href="https://www.instagram.com/secret_honor_usa/" target="_blank" rel="noopener">Follow @secret_honor_usa</a>
+  </div>
+  <div id="next" class="next"></div>
+  <p style="text-align:center;margin-top:24px"><a class="btn ghost" href="./">All stories</a></p>
+</main>
+<footer>© Secret Honor USA · Stories are dramatized and inspired by the spirit of real service. Names and events are fictional.</footer>
+<script src="stories.js"></script>
+<script src="ads.js"></script>
+<script>
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+  var all = window.STORIES || [];
+  var id = new URLSearchParams(location.search).get("id");
+  var s = all.find(function (x) { return x.id === id; }) || all[0];
+  document.title = s.title + " | Secret Honor USA";
+  var html = '<h1>' + esc(s.title) + '</h1><p class="meta">' + s.minutes + ' min read</p><div class="ad" data-slot="top"></div>';
+  s.parts.forEach(function (part, i) {
+    if (i > 0) html += '<div class="break">★ ★ ★</div><div class="ad" data-slot="middle"></div>';
+    part.forEach(function (p, j) { html += '<p' + (i === 0 && j === 0 ? ' class="lead"' : '') + '>' + esc(p) + '</p>'; });
+  });
+  html += '<div class="ad" data-slot="bottom"></div>';
+  document.getElementById("story").innerHTML = html;
+  var others = all.filter(function (x) { return x.id !== s.id; });
+  document.getElementById("next").innerHTML = others.length ? '<h2>Read next</h2>' + others.map(function (o) {
+    return '<a class="card" href="story.html?id=' + encodeURIComponent(o.id) + '"><h3>' + esc(o.title) + '</h3><p>' + esc(o.teaser) + '</p><span class="go">Read the story →</span></a>';
+  }).join("") : "";
+  fillAds();
+</script>
+</body>
+</html>

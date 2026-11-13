@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secret Honor USA - Stories of Heroes</title>
+<meta name="description" content="Powerful stories of heroes, veterans and the quiet people who served.">
+<meta property="og:title" content="Secret Honor USA - Stories of Heroes">
+<meta property="og:description" content="Powerful stories of heroes, veterans and the quiet people who served.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="emblem">H</div>
+  <div class="brand">Secret Honor USA</div>
+  <p class="tag">Behind every uniform is a story the world never knew.</p>
+</header>
+<main class="wrap">
+  <div class="ad" data-slot="top"></div>
+  <h2>Latest stories</h2>
+  <div id="list"></div>
+  <div class="ad" data-slot="bottom"></div>
+  <div class="follow">
+    <p>New stories every week. Don't miss the next one.</p>
+    <a class="btn" href="https://www.instagram.com/secret_honor_usa/" target="_blank" rel="noopener">Follow @secret_honor_usa</a>
+  </div>
+</main>
+<footer>© Secret Honor USA · Stories are dramatized and inspired by the spirit of real service. Names and events are fictional.</footer>
+<script src="stories.js"></script>
+<script src="ads.js"></script>
+<script>
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+  document.getElementById("list").innerHTML = (window.STORIES || []).map(function (s) {
+    return '<a class="card" href="story.html?id=' + encodeURIComponent(s.id) + '"><h3>' + esc(s.title) + '</h3><p>' + esc(s.teaser) +
+           '</p><span class="go">Read the story · ' + s.minutes + ' min →</span></a>';
+  }).join("");
+  fillAds();
+</script>
+</body>
+</html>
