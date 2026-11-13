@@ -30,7 +30,7 @@
   document.title = s.title + " | Secret Honor USA";
   var html = '<h1>' + esc(s.title) + '</h1><p class="meta">' + s.minutes + ' min read</p><div class="ad" data-slot="top"></div>';
   s.parts.forEach(function (part, i) {
-    if (i > 0) html += '<div class="break">★ ★ ★</div><div class="ad" data-slot="middle"></div>';
+    if (i > 0) html += '<div class="break">★ ★ ★</div><div class="ad" data-slot="' + (i === 1 ? 'middle1' : 'middle') + '"></div>';
     part.forEach(function (p, j) { html += '<p' + (i === 0 && j === 0 ? ' class="lead"' : '') + '>' + esc(p) + '</p>'; });
   });
   html += '<div class="ad" data-slot="bottom"></div>';

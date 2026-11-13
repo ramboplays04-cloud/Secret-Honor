@@ -1,9 +1,15 @@
 // AD SETTINGS - paste the ad code from your ad network here (one block per ad place).
 // Leave a block empty ("") and nothing shows there. Pages work fine with no ads.
-//   top     : under the title
-//   middle  : between the parts of a story (repeats)
+//   home    : on the home page (list of stories)
+//   middle1 : inside a story, after the first part (best spot)
+//   top     : under the story title
+//   middle  : between the other parts of a story (repeats)
 //   bottom  : after the story
+// Note: one Native Banner code can only be used ONCE per page - for more ad places, create more ad units.
+var NATIVE_1 = "<script async=\"async\" data-cfasync=\"false\" src=\"https://bauval.org/21/2759591e1325ae64edcc63732fce63e8\"></script>\n<div id=\"container-2759591e1325ae64edcc63732fce63e8\"></div>";
 window.AD_CODE = {
+  home: NATIVE_1,
+  middle1: NATIVE_1,
   top: "",
   middle: "",
   bottom: ""
